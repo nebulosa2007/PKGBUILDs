@@ -22,3 +22,6 @@
 [submodule "scu-git"]
 	path = scu-git
 	url = ssh://aur@aur.archlinux.org/scu-git.git
+[submodule "wireguard-ui"]
+	path = wireguard-ui
+	url = ssh://aur@aur.archlinux.org/wireguard-ui.git
