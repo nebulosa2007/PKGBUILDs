@@ -10,3 +10,6 @@
 [submodule "gvc-git"]
 	path = gvc-git
 	url = ssh://aur@aur.archlinux.org/gvc-git.git
+[submodule "linux-ck-autobuild"]
+	path = linux-ck-autobuild
+	url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
