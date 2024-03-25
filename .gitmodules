@@ -1,3 +1,6 @@
 [submodule "gcad3d-bin"]
 	path = gcad3d-bin
 	url = ssh://aur@aur.archlinux.org/gcad3d-bin.git
+[submodule "gsconnect"]
+	path = gsconnect
+	url = ssh://aur@aur.archlinux.org/gsconnect.git
