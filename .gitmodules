@@ -7,3 +7,6 @@
 [submodule "gsconnect-git"]
 	path = gsconnect-git
 	url = ssh://aur@aur.archlinux.org/gsconnect-git.git
+[submodule "gvc-git"]
+	path = gvc-git
+	url = ssh://aur@aur.archlinux.org/gvc-git.git
