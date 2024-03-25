@@ -25,3 +25,6 @@
 [submodule "wireguard-ui"]
 	path = wireguard-ui
 	url = ssh://aur@aur.archlinux.org/wireguard-ui.git
+[submodule "wireguard-ui-bin"]
+	path = wireguard-ui-bin
+	url = ssh://aur@aur.archlinux.org/wireguard-ui-bin.git
