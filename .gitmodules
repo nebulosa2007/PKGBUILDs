@@ -16,3 +16,6 @@
 [submodule "niri"]
 	path = niri
 	url = ssh://aur@aur.archlinux.org/niri.git
+[submodule "niri-bin"]
+	path = niri-bin
+	url = ssh://aur@aur.archlinux.org/niri-bin.git
