@@ -1,4 +1,4 @@
-[My PKGBULDs list](https://aur.archlinux.org/packages?SeB=m&K=Nebulosa)
+[My PKGBUILD list](https://aur.archlinux.org/packages?SeB=m&K=Nebulosa)
 
 [Main guideline for PKGBUILD](https://wiki.archlinux.org/title/PKGBUILD)
 
@@ -6,9 +6,9 @@
 
 * prefer `git+$url` over `git://` for taking advantage of TLS encryption
 
-* b2 is the preferred hash check
+* `b2sum` is the preferred hash check
 
-* cut 'v' and other prefixes from pkgver
+* cut 'v' and other prefixes from `pkgver`
 
 * don't use custom variables when not needed (like use `${pkgname%-git}`)
 
