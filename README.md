@@ -15,7 +15,7 @@
 * `pkgrel` is for internal use of the PKGBUILD and must not be used in `source=()` or as part of pkgver
 
 * quoting in `arch=()` `license=()` `depends=()` `makedepends=()` `depends=()` is pointless and a personal choice, except when needed:
-`optdepends=('gst-libav: additional codecs') license=('custom:WTFPL') license=('custom:corp EULA')`
+`optdepends=('gst-libav: additional codecs') license=('custom:WTFPL') license=('custom:corp EULA')` and use double quotting for `"$pkgdir"` and `"$pkgscr"`
 
 * remember to quote variables for avoiding failures due to whitespaces in paths
 
@@ -27,7 +27,7 @@
 
 * make downloaded sources non-conflicting and re-usable, i.e.
 
-  for archives: `url/v.$pkgver.tar.gz` to `$pkgname-$pkgver::url/v.$pkgver.tar.gz`
+  for Github releases use just `source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)` or `source=($pkgname-$pkgver.tar.gz::$url/....)` for other hostings.
 
   for git repository find a common ground for source name
 
@@ -37,6 +37,8 @@
 
     + for git avoid `$pkgname::git+url/name.git` when `pkgname=name` (pointless since source is already called 'name')
 
-    + for ease of use when git source have uppercase name `$pkgname::git+url/Name.git` or `${pkgname%-git}::git+url/Name.git`
+    + for ease of use when git source have uppercase name `${pkgname%-git}::git+url/Name.git`
+    
+    + use `source=(${pkgname%-git}::git+$url.git`
 
-* install not common licenses in `$pkgdir/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package
+* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package
