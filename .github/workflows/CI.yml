@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           pacman -Syu --noconfirm
-          pacman -S --noconfirm base-devel
+          pacman -S --noconfirm base-devel git
           git submodule update ${{ matrix.workdir }}
       - name: Build package
         run: makepkg -si
