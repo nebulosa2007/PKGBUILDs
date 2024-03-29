@@ -20,7 +20,7 @@ jobs:
           pacman -S --noconfirm base-devel git
           pwd
           ls -la
-          git submodule update ${{ matrix.workdir }}
+          git submodule update --remote ${{ matrix.workdir }}
       - name: Build package
-        run: makepkg -si
+        run: makepkg -sCc
         working-directory: ${{ matrix.workdir }}
