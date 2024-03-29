@@ -15,7 +15,7 @@
 * `pkgrel` is for internal use of the PKGBUILD and must not be used in `source=()` or as part of pkgver
 
 * quoting in `arch=()` `license=()` `depends=()` `makedepends=()` `depends=()` is pointless and a personal choice, except when needed:
-`optdepends=('gst-libav: additional codecs') license=('custom:WTFPL') license=('custom:corp EULA')` and use double quotting for `"$pkgdir"` and `"$pkgscr"`
+`optdepends=('gst-libav: additional codecs') license=('custom:WTFPL') license=('custom:corp EULA')`. But always use double quotting for `"$pkgdir"` and `"$pkgscr"`
 
 * remember to quote variables for avoiding failures due to whitespaces in paths
 
@@ -41,4 +41,4 @@
     
     + use `source=(${pkgname%-git}::git+$url.git`
 
-* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package
+* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package. Use porper identifier from [SPDX list](https://spdx.org/licenses/preview/exceptions-index.html). For `-git` `-bin` `-whatever` packages use `install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/${pkgname%-bin}/`
