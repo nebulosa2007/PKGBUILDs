@@ -34,3 +34,6 @@
 [submodule "scu-bin"]
 	path = scu-bin
 	url = ssh://aur@aur.archlinux.org/scu-bin.git
+[submodule "scu"]
+	path = scu
+	url = ssh://aur@aur.archlinux.org/scu.git
