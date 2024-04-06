@@ -4,6 +4,16 @@
 
 ### Other packaging guidelines & tips
 
+* for packages `-bin` you can use additional sumhash check (if contributor of software provide it) in `prepare` function:
+
+```
+prepare(){
+    md5sum -c $pkgname-$pkgver.md5
+    #OR
+    echo $(<*.md5) *.tar.gz | md5sum -c -
+}
+```
+
 * prefer `git+$url` over `git://` for taking advantage of TLS encryption
 
 * `b2sum` is the preferred hash check
@@ -41,4 +51,4 @@
     
     + use `source=(${pkgname%-git}::git+$url.git`
 
-* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package. Use porper identifier from [SPDX list](https://spdx.org/licenses/preview/exceptions-index.html). For `-git` `-bin` `-whatever` packages use `install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/${pkgname%-bin}/`
+* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package. Use porper identifier from [SPDX list](https://spdx.org/licenses/preview/index.html). For `-git` `-bin` `-whatever` packages use `install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/${pkgname%-bin}/`
