@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily update of Telegram configuration
+Documentation=https://github.com/TelegramMessenger/MTProxy/blob/master/README.md
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

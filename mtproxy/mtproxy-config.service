@@ -1,0 +1,12 @@
+[Unit]
+Description=Updates Telegram configuration
+Documentation=https://github.com/TelegramMessenger/MTProxy/blob/master/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/curl -s https://core.telegram.org/getProxyConfig -o /var/lib/mtproxy/multi.conf
+ExecStart=/usr/bin/curl -s https://core.telegram.org/getProxySecret -o /var/lib/mtproxy/secret.conf
+ExecStartPost=/usr/bin/systemctl try-restart mtproxy.service
+StandardError=journal
