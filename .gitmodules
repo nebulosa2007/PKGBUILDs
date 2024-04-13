@@ -37,3 +37,6 @@
 [submodule "scu"]
 	path = scu
 	url = ssh://aur@aur.archlinux.org/scu.git
+[submodule "onagre"]
+	path = onagre
+	url = ssh://aur@aur.archlinux.org/onagre.git
