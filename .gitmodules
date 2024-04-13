@@ -40,3 +40,6 @@
 [submodule "onagre"]
 	path = onagre
 	url = ssh://aur@aur.archlinux.org/onagre.git
+[submodule "wlr-which-key"]
+	path = wlr-which-key
+	url = ssh://aur@aur.archlinux.org/wlr-which-key.git
