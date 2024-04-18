@@ -4,7 +4,7 @@
 
 ### Other packaging guidelines & tips
 
-* for packages `-bin` you can use additional sumhash check (if contributor of software provide it) in `prepare` function:
+* for packages `-bin` you can use additional hashsum check (if contributor of software provide it) in `prepare` function:
 
 ```
 prepare(){
@@ -51,4 +51,4 @@ prepare(){
 
     + use `source=(${pkgname%-git}::git+$url.git`
 
-* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package. Use porper identifier from [SPDX list](https://spdx.org/licenses/preview/index.html). For `-git` `-bin` `-whatever` packages use `install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/${pkgname%-bin}/`
+* install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package. Use proper identifier from [SPDX list](https://spdx.org/licenses/preview/index.html). For `-git` `-bin` `-whatever` packages use `install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/${pkgname%-bin}/`
