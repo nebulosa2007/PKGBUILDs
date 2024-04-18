@@ -1,6 +1,6 @@
 name: Check builds
 
-on: 
+on:
   workflow_dispatch
 
 jobs:
