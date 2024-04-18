@@ -1,45 +1,45 @@
 [submodule "gcad3d-bin"]
-	path = gcad3d-bin
-	url = ssh://aur@aur.archlinux.org/gcad3d-bin.git
+  path = gcad3d-bin
+  url = ssh://aur@aur.archlinux.org/gcad3d-bin.git
 [submodule "gsconnect"]
-	path = gsconnect
-	url = ssh://aur@aur.archlinux.org/gsconnect.git
+  path = gsconnect
+  url = ssh://aur@aur.archlinux.org/gsconnect.git
 [submodule "gsconnect-git"]
-	path = gsconnect-git
-	url = ssh://aur@aur.archlinux.org/gsconnect-git.git
+  path = gsconnect-git
+  url = ssh://aur@aur.archlinux.org/gsconnect-git.git
 [submodule "gvc-git"]
-	path = gvc-git
-	url = ssh://aur@aur.archlinux.org/gvc-git.git
+  path = gvc-git
+  url = ssh://aur@aur.archlinux.org/gvc-git.git
 [submodule "linux-ck-autobuild"]
-	path = linux-ck-autobuild
-	url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
+  path = linux-ck-autobuild
+  url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
 [submodule "niri"]
-	path = niri
-	url = ssh://aur@aur.archlinux.org/niri.git
+  path = niri
+  url = ssh://aur@aur.archlinux.org/niri.git
 [submodule "niri-bin"]
-	path = niri-bin
-	url = ssh://aur@aur.archlinux.org/niri-bin.git
+  path = niri-bin
+  url = ssh://aur@aur.archlinux.org/niri-bin.git
 [submodule "scu-git"]
-	path = scu-git
-	url = ssh://aur@aur.archlinux.org/scu-git.git
+  path = scu-git
+  url = ssh://aur@aur.archlinux.org/scu-git.git
 [submodule "wireguard-ui"]
-	path = wireguard-ui
-	url = ssh://aur@aur.archlinux.org/wireguard-ui.git
+  path = wireguard-ui
+  url = ssh://aur@aur.archlinux.org/wireguard-ui.git
 [submodule "wireguard-ui-bin"]
-	path = wireguard-ui-bin
-	url = ssh://aur@aur.archlinux.org/wireguard-ui-bin.git
+  path = wireguard-ui-bin
+  url = ssh://aur@aur.archlinux.org/wireguard-ui-bin.git
 [submodule "wl-gears-git"]
-	path = wl-gears-git
-	url = ssh://aur@aur.archlinux.org/wl-gears-git.git
+  path = wl-gears-git
+  url = ssh://aur@aur.archlinux.org/wl-gears-git.git
 [submodule "scu-bin"]
-	path = scu-bin
-	url = ssh://aur@aur.archlinux.org/scu-bin.git
+  path = scu-bin
+  url = ssh://aur@aur.archlinux.org/scu-bin.git
 [submodule "scu"]
-	path = scu
-	url = ssh://aur@aur.archlinux.org/scu.git
+  path = scu
+  url = ssh://aur@aur.archlinux.org/scu.git
 [submodule "onagre"]
-	path = onagre
-	url = ssh://aur@aur.archlinux.org/onagre.git
+  path = onagre
+  url = ssh://aur@aur.archlinux.org/onagre.git
 [submodule "wlr-which-key"]
-	path = wlr-which-key
-	url = ssh://aur@aur.archlinux.org/wlr-which-key.git
+  path = wlr-which-key
+  url = ssh://aur@aur.archlinux.org/wlr-which-key.git
