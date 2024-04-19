@@ -43,3 +43,6 @@
 [submodule "wlr-which-key"]
   path = wlr-which-key
   url = ssh://aur@aur.archlinux.org/wlr-which-key.git
+[submodule "chawan-git"]
+	path = chawan-git
+	url = ssh://aur@aur.archlinux.org/chawan-git.git
