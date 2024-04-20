@@ -46,3 +46,6 @@
 [submodule "chawan-git"]
 	path = chawan-git
 	url = ssh://aur@aur.archlinux.org/chawan-git.git
+[submodule "rdrview"]
+	path = rdrview
+	url = ssh://aur@aur.archlinux.org/rdrview.git
