@@ -1,5 +1,3 @@
-[My PKGBUILD list](https://aur.archlinux.org/packages?SeB=m&K=Nebulosa)
-
 [Main guideline for PKGBUILD](https://wiki.archlinux.org/title/PKGBUILD)
 
 ### Other packaging guidelines & tips
