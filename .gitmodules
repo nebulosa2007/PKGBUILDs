@@ -13,12 +13,6 @@
 [submodule "linux-ck-autobuild"]
   path = linux-ck-autobuild
   url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
-[submodule "niri"]
-  path = niri
-  url = ssh://aur@aur.archlinux.org/niri.git
-[submodule "niri-bin"]
-  path = niri-bin
-  url = ssh://aur@aur.archlinux.org/niri-bin.git
 [submodule "scu-git"]
   path = scu-git
   url = ssh://aur@aur.archlinux.org/scu-git.git
