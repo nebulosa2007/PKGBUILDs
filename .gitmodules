@@ -43,3 +43,6 @@
 [submodule "rdrview"]
 	path = rdrview
 	url = ssh://aur@aur.archlinux.org/rdrview.git
+[submodule "xwayland-satellite"]
+	path = xwayland-satellite
+	url = ssh://aur@aur.archlinux.org/xwayland-satellite.git
