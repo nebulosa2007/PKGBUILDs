@@ -1,0 +1,44 @@
+# Maintainer: Nebulosa  <nebulosa2007-at-yandex-dot-ru>
+
+pkgname=rudesktop-bin
+pkgver=2.6.1146
+pkgrel=1
+pkgdesc="Full-featured software for remote access and device configuration management"
+arch=(x86_64)
+url="https://rudesktop.ru"
+license=(Unlicense)
+depends=(
+  alsa-lib
+  cairo
+  ca-certificates
+  gcc-libs
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk3
+  hicolor-icon-theme
+  libpulse
+  libx11
+  libxcb
+  libxfixes
+  libxtst
+  pango
+  python
+  python-six
+  sudo
+  util-linux-libs
+  xdg-utils
+)
+provides=(${pkgname%-bin})
+conflicts=(${pkgname%-bin})
+options=(!debug)
+install=${pkgname%-bin}.install
+source=(${pkgname%-bin}-$pkgver.deb::$url/download/${pkgname%-bin}-amd64.deb)
+b2sums=('6f92d4b608ad5b3ee0d21c60a464190001617ec8875c589c0189832ce1d57f6362816110ce595ebc553f058de599dfa3c67fcf70c350f179223af577aed73b08')
+
+package() {
+  bsdtar -xf "$srcdir"/data.tar.xz -C "$pkgdir"
+  chmod -R go-w "$pkgdir"
+  install -vDm644 "$pkgdir"/usr/share/${pkgname%-bin}-client/files/systemd/${pkgname%-bin}.service      "$pkgdir"/usr/lib/systemd/system/${pkgname%-bin}.service
+  install -vDm644 "$pkgdir"/usr/share/${pkgname%-bin}-client/files/systemd/${pkgname%-bin}.service.user "$pkgdir"/usr/lib/systemd/user/${pkgname%-bin}.service
+}
