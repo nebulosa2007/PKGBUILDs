@@ -39,5 +39,5 @@ package() {
   install -vDm644 LICENSE  -t "$pkgdir"/usr/share/licenses/$pkgname/
   
   # Fix certificates, do manually:
-  # ln -s /etc/ca-certificates/extracted/tls-ca-bundle.pem "$pkgdir"/usr/lib/python3.12/site-packages/curl_cffi/cacert.pem
+  # sudo ln -s /etc/ca-certificates/extracted/tls-ca-bundle.pem /usr/lib/python3.12/site-packages/curl_cffi/cacert.pem
 }
