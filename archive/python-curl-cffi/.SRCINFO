@@ -1,0 +1,21 @@
+pkgbase = python-curl-cffi
+	pkgdesc = Python binding for curl-impersonate via CFFI
+	pkgver = 0.5.10
+	pkgrel = 2
+	url = https://github.com/yifeikong/curl_cffi
+	arch = x86_64
+	license = MIT
+	makedepends = gcc13
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = libcurl-impersonate-chrome
+	depends = python-cffi
+	depends = python-gevent
+	depends = python-eventlet
+	options = !debug
+	source = https://files.pythonhosted.org/packages/source/c/curl_cffi/curl_cffi-0.5.10.tar.gz
+	b2sums = 6b1f07304bba3509814d23deb19c582513d91df1b17f8d24c5243f87b40c2cfa8465de34635323e940577e05f1924e78c4ed9dcf1f1a7161928d7cfd34af28ba
+
+pkgname = python-curl-cffi
