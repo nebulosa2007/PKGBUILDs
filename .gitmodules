@@ -38,14 +38,14 @@
   path = wlr-which-key
   url = ssh://aur@aur.archlinux.org/wlr-which-key.git
 [submodule "chawan-git"]
-	path = chawan-git
-	url = ssh://aur@aur.archlinux.org/chawan-git.git
+  path = chawan-git
+  url = ssh://aur@aur.archlinux.org/chawan-git.git
 [submodule "rdrview"]
-	path = rdrview
-	url = ssh://aur@aur.archlinux.org/rdrview.git
+  path = rdrview
+  url = ssh://aur@aur.archlinux.org/rdrview.git
 [submodule "xwayland-satellite"]
-	path = xwayland-satellite
-	url = ssh://aur@aur.archlinux.org/xwayland-satellite.git
+  path = xwayland-satellite
+  url = ssh://aur@aur.archlinux.org/xwayland-satellite.git
 [submodule "cassette-git"]
-	path = cassette-git
-	url = ssh://aur@aur.archlinux.org/cassette-git.git
+  path = cassette-git
+  url = ssh://aur@aur.archlinux.org/cassette-git.git
