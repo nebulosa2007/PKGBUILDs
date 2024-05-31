@@ -49,3 +49,6 @@
 [submodule "cassette-git"]
   path = cassette-git
   url = ssh://aur@aur.archlinux.org/cassette-git.git
+[submodule "cassette-bin"]
+	path = cassette-bin
+	url = ssh://aur@aur.archlinux.org/cassette-bin.git
