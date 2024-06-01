@@ -1,0 +1,55 @@
+# Maintainer: Nebulosa  <nebulosa2007-at-yandex-dot-ru>
+
+pkgname=musicat
+pkgver=0.6.0
+pkgrel=1
+pkgdesc="Music player and tagger for offline music with map view, GPT analysis and artist toolkit"
+arch=(x86_64)
+url="https://github.com/basharovV/$pkgname"
+license=(GPL-3.0-only)
+depends=(
+  cairo
+  gcc-libs
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk3
+  hicolor-icon-theme
+  libsoup
+  openssl
+  pango
+  webkit2gtk
+)
+makedepends=(
+  npm
+  rust
+)
+options=(!debug)
+source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+b2sums=('78ede2e0865db4271df20bdbcb6dfb03573c67406b747b36af362a6c65099d59f0df3b7502b5fc6131de2c0603f1c00672e63749fde694418a0ed7ff8e221ec7')
+
+prepare(){
+  cd $pkgname-$pkgver
+  # should be fixed in next version (>0.6.0)
+  sed -i "/cli-win32-x64-msvc/d" package.json
+  HOME="$srcdir"
+  npm install
+}
+
+build() {
+  cd $pkgname-$pkgver
+  export RUSTFLAGS="--remap-path-prefix=$srcdir=/"
+  export CARGO_HOME="$srcdir"/.cargo
+  export npm_config_build_from_source=true
+  HOME="$srcdir"
+  npx tauri build -b deb
+}
+
+package() {
+  cd $pkgname-$pkgver/src-tauri/target/release/bundle/deb/${pkgname}_${pkgver}_amd64/data
+    install -Dm755 usr/bin/$pkgname                               -t "$pkgdir"/usr/bin/
+  for res in 256x256@2 128x128 32x32; do
+    install -Dm644 usr/share/icons/hicolor/$res/apps/$pkgname.png -t "$pkgdir"/usr/share/icons/hicolor/$res/apps/
+  done
+    install -Dm644 usr/share/applications/$pkgname.desktop        -t "$pkgdir"/usr/share/applications/
+}
