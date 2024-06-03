@@ -1,4 +1,4 @@
-pkgbase = amnezia-client-bin
+pkgbase = amnezia-client-installer-bin
 	pkgdesc = Amnezia VPN Client
 	pkgver = 4.5.3.0
 	pkgrel = 1
@@ -17,10 +17,10 @@ pkgbase = amnezia-client-bin
 	depends = libxext
 	depends = xz
 	depends = zlib
-	provides = amnezia-client
-	conflicts = amnezia-client
+	provides = amnezia-client-installer
+	conflicts = amnezia-client-installer
 	options = !debug
 	source = https://github.com/amnezia-vpn/amnezia-client/releases/download/4.5.3.0/AmneziaVPN_Linux_installer.tar.zip
 	b2sums = 4a6fbdea9fc208f9e1627f7fadcea59e1b862bfec5ecf0d8eab57cbf81343994f5fd78696091946df1d492250638f4c5553945cc1d7992c75e6394aa3c8a12a4
 
-pkgname = amnezia-client-bin
+pkgname = amnezia-client-installer-bin
