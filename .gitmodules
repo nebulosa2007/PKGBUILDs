@@ -52,3 +52,9 @@
 [submodule "cassette-bin"]
 	path = cassette-bin
 	url = ssh://aur@aur.archlinux.org/cassette-bin.git
+[submodule "flatpak-ext"]
+	path = flatpak-ext
+	url = ssh://aur@aur.archlinux.org/flatpak-ext.git
+[submodule "flatpak-ext-git"]
+	path = flatpak-ext-git
+	url = ssh://aur@aur.archlinux.org/flatpak-ext-git.git
