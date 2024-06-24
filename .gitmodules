@@ -58,3 +58,6 @@
 [submodule "flatpak-ext-git"]
 	path = flatpak-ext-git
 	url = ssh://aur@aur.archlinux.org/flatpak-ext-git.git
+[submodule "xwayland-run"]
+	path = xwayland-run
+	url = https://aur.archlinux.org/xwayland-run.git
