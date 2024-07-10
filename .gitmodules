@@ -61,3 +61,6 @@
 [submodule "xwayland-run"]
 	path = xwayland-run
 	url = https://aur.archlinux.org/xwayland-run.git
+[submodule "cassette"]
+	path = cassette
+	url = ssh://aur@aur.archlinux.org/cassette.git
