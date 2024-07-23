@@ -1,7 +1,7 @@
 pkgbase = python-curl-cffi
 	pkgdesc = Python binding for curl-impersonate via CFFI
 	pkgver = 0.5.10
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/yifeikong/curl_cffi
 	arch = x86_64
 	license = MIT

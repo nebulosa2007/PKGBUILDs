@@ -1,4 +1,6 @@
 # Maintainer: Matthew Sexton <mssxtn@gmail.com>
+# Contributor: Nebulosa <nebulosa2007 at yandex dot ru>
+# Contributor: dllud <dllud riseup net>
 
 pkgname=python-curl-cffi
 _name=curl_cffi
@@ -37,7 +39,7 @@ package() {
   cd "${_name}-$pkgver"
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 LICENSE  -t "$pkgdir"/usr/share/licenses/$pkgname/
-
-  # Fix certificates, do manually:
-  # sudo ln -s /etc/ca-certificates/extracted/tls-ca-bundle.pem /usr/lib/python3.12/site-packages/curl_cffi/cacert.pem
+  #Fix certificates
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  ln -s /etc/ca-certificates/extracted/tls-ca-bundle.pem "${pkgdir}/usr/lib/python${python_version}/site-packages/curl_cffi/cacert.pem"
 }
