@@ -64,3 +64,6 @@
 [submodule "cassette"]
 	path = cassette
 	url = ssh://aur@aur.archlinux.org/cassette.git
+[submodule "byedpi-bin"]
+	path = byedpi-bin
+	url = ssh://aur@aur.archlinux.org/byedpi-bin.git
