@@ -67,3 +67,6 @@
 [submodule "byedpi-bin"]
 	path = byedpi-bin
 	url = ssh://aur@aur.archlinux.org/byedpi-bin.git
+[submodule "byedpi"]
+	path = byedpi
+	url = ssh://aur@aur.archlinux.org/byedpi.git
