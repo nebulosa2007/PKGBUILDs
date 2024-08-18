@@ -22,6 +22,7 @@
 * use `pkgname` for url - `$pkgname`, `${pkgname%-bin}`, `${pkgname%-git}`
 ### license
 * install not common licenses in `"$pkgdir"/usr/share/licenses/$pkgname`, not mandatory to install common licenses; see 'licenses' package. Use proper identifier from [SPDX list](https://spdx.org/licenses/preview/index.html). For `-git` `-bin` `-whatever` packages use `install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/${pkgname%-bin}/`
+* for MIT (or similar) license for Github sourse you could use `$url/raw/main/LICENSE`
 ### groups
 ### depends
 * All depends should be writed at new string, and brackets too:
