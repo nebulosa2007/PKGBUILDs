@@ -4,12 +4,14 @@
 pkgname=python-curl-cffi
 _name=curl_cffi
 pkgver=0.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Python binding for curl-impersonate via CFFI"
 arch=(x86_64)
 url="https://github.com/yifeikong/${_name}"
 license=(MIT)
 depends=(
+  glibc
+  python
   python-cffi
   python-certifi
   python-gevent
