@@ -13,9 +13,6 @@
 [submodule "linux-ck-autobuild"]
   path = linux-ck-autobuild
   url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
-[submodule "scu-git"]
-  path = scu-git
-  url = ssh://aur@aur.archlinux.org/scu-git.git
 [submodule "wireguard-ui"]
   path = wireguard-ui
   url = ssh://aur@aur.archlinux.org/wireguard-ui.git
@@ -25,12 +22,6 @@
 [submodule "wl-gears-git"]
   path = wl-gears-git
   url = ssh://aur@aur.archlinux.org/wl-gears-git.git
-[submodule "scu-bin"]
-  path = scu-bin
-  url = ssh://aur@aur.archlinux.org/scu-bin.git
-[submodule "scu"]
-  path = scu
-  url = ssh://aur@aur.archlinux.org/scu.git
 [submodule "onagre"]
   path = onagre
   url = ssh://aur@aur.archlinux.org/onagre.git
