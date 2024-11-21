@@ -1,0 +1,53 @@
+# Maintainer: Konstantin Shalygin <k0ste@k0ste.ru>
+# Contributor: Konstantin Shalygin <k0ste@k0ste.ru>
+# Contributor : Dobroslaw Kijowski <dobo90_at_gmail.com>
+# Contributor: Paul N. Maxwell <msg.maxwel@gmail.com>
+
+pkgbase=transgui
+pkgver=5.18.0
+pkgrel=4
+pkgdesc="A feature rich cross platform Transmission BitTorrent client"
+pkgname=($pkgbase-gtk $pkgbase-qt)
+arch=(aarch64 x86_64)
+url="https://github.com/transmission-remote-gui/$pkgbase"
+license=(GPL-2.0-only)
+makedepends=(gtk2 lazarus qt6pas)
+provides=($pkgbase)
+conflicts=($pkgbase)
+options=(!debug)
+source=($url/archive/v$pkgver.tar.gz $pkgbase.desktop https://s3.e2e4.ru/k0ste/pkgbuild/${pkgver}_5_year_patch.patch)
+b2sums=('681367ca0cc12155db24a67f1d799f5d05c4dc6e845c7b5dfe70f63a3b128b22befbd973e946fea24f5765c18a164c3d631e9646cdf3a6a51cbd33a601ab06bf'
+        '9fb4b3f3b2a8e6d7b66109236ec6faee4d0737361bad3cf548608161cfd09132ac7c469b4f32c0443a51cc1ea6a908086dd8bc6a7a5eb16ba33d681344dfeb79'
+        '178a7c1945c31ec0351e81e5a9f85919d4106a5bef2e4cb0b62fa84d2535378a17a762680f96958ce1963ff84a423e9bfd491d8b82a75c2142c1ecdba544098e')
+
+prepare() {
+  cd $pkgbase-$pkgver
+  # The patch over master branch for 5 years. No new releases since 2019
+  patch -p1 -i ../${pkgver}_5_year_patch.patch
+  mkdir ../build-gtk2 ../build-qt6
+}
+
+_build_and_install () {
+  cd $pkgbase-$pkgver
+  
+  lazbuild $pkgbase.lpi \
+    --lazarusdir="/usr/lib/lazarus" \
+    --primary-config-path="../build-$1" \
+    --widgetset="$1"
+
+  install -vDm755 units/$pkgbase      -t "$pkgdir"/usr/bin
+  install -vDm644 ../$pkgbase.desktop -t "$pkgdir"/usr/share/applications
+  install -vDm644 $pkgbase.png        -t "$pkgdir"/usr/share/pixmaps
+  install -vDm644 lang/$pkgbase.*     -t "$pkgdir"/usr/share/$pkgbase/lang
+  rm                                     "$pkgdir"/usr/share/$pkgbase/lang/$pkgbase.template
+}
+
+package_transgui-gtk() {
+  depends=(at-spi2-core cairo gdk-pixbuf2 glib2 glibc gtk2 libx11 pango)
+  _build_and_install gtk2
+}
+
+package_transgui-qt() {
+  depends=(glibc libx11 qt6pas)
+  _build_and_install qt6
+}
