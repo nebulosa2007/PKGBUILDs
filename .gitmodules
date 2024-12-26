@@ -50,23 +50,26 @@
   path = cassette-git
   url = ssh://aur@aur.archlinux.org/cassette-git.git
 [submodule "cassette-bin"]
-	path = cassette-bin
-	url = ssh://aur@aur.archlinux.org/cassette-bin.git
+  path = cassette-bin
+  url = ssh://aur@aur.archlinux.org/cassette-bin.git
 [submodule "flatpak-ext"]
-	path = flatpak-ext
-	url = ssh://aur@aur.archlinux.org/flatpak-ext.git
+  path = flatpak-ext
+  url = ssh://aur@aur.archlinux.org/flatpak-ext.git
 [submodule "flatpak-ext-git"]
-	path = flatpak-ext-git
-	url = ssh://aur@aur.archlinux.org/flatpak-ext-git.git
+  path = flatpak-ext-git
+  url = ssh://aur@aur.archlinux.org/flatpak-ext-git.git
 [submodule "xwayland-run"]
-	path = xwayland-run
-	url = https://aur.archlinux.org/xwayland-run.git
+  path = xwayland-run
+  url = https://aur.archlinux.org/xwayland-run.git
 [submodule "cassette"]
-	path = cassette
-	url = ssh://aur@aur.archlinux.org/cassette.git
+  path = cassette
+  url = ssh://aur@aur.archlinux.org/cassette.git
 [submodule "byedpi-bin"]
-	path = byedpi-bin
-	url = ssh://aur@aur.archlinux.org/byedpi-bin.git
+  path = byedpi-bin
+  url = ssh://aur@aur.archlinux.org/byedpi-bin.git
 [submodule "byedpi"]
-	path = byedpi
-	url = ssh://aur@aur.archlinux.org/byedpi.git
+  path = byedpi
+  url = ssh://aur@aur.archlinux.org/byedpi.git
+[submodule "easy-switcher"]
+  path = easy-switcher
+  url = ssh://aur@aur.archlinux.org/easy-switcher.git
