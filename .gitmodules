@@ -73,3 +73,6 @@
 [submodule "easy-switcher"]
   path = easy-switcher
   url = ssh://aur@aur.archlinux.org/easy-switcher.git
+[submodule "mmtui"]
+	path = mmtui
+	url = ssh://aur@aur.archlinux.org/mmtui.git
