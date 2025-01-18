@@ -43,9 +43,6 @@
 [submodule "rdrview"]
   path = rdrview
   url = ssh://aur@aur.archlinux.org/rdrview.git
-[submodule "xwayland-satellite"]
-  path = xwayland-satellite
-  url = ssh://aur@aur.archlinux.org/xwayland-satellite.git
 [submodule "cassette-git"]
   path = cassette-git
   url = ssh://aur@aur.archlinux.org/cassette-git.git
@@ -74,5 +71,5 @@
   path = easy-switcher
   url = ssh://aur@aur.archlinux.org/easy-switcher.git
 [submodule "mmtui"]
-	path = mmtui
-	url = ssh://aur@aur.archlinux.org/mmtui.git
+  path = mmtui
+  url = ssh://aur@aur.archlinux.org/mmtui.git
