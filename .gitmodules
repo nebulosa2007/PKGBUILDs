@@ -73,3 +73,6 @@
 [submodule "mmtui"]
   path = mmtui
   url = ssh://aur@aur.archlinux.org/mmtui.git
+[submodule "improve-imgsli-git"]
+	path = improve-imgsli-git
+	url = ssh://aur@aur.archlinux.org/improve-imgsli-git.git
