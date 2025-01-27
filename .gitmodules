@@ -79,3 +79,6 @@
 [submodule "improve-imgsli"]
 	path = improve-imgsli
 	url = ssh://aur@aur.archlinux.org/improve-imgsli.git
+[submodule "orbitiny-desktop-bin"]
+	path = orbitiny-desktop-bin
+	url = ssh://aur@aur.archlinux.org/orbitiny-desktop-bin.git
