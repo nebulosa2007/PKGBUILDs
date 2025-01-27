@@ -76,3 +76,6 @@
 [submodule "improve-imgsli-git"]
 	path = improve-imgsli-git
 	url = ssh://aur@aur.archlinux.org/improve-imgsli-git.git
+[submodule "improve-imgsli"]
+	path = improve-imgsli
+	url = ssh://aur@aur.archlinux.org/improve-imgsli.git
