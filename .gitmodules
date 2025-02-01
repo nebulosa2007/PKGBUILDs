@@ -82,3 +82,6 @@
 [submodule "orbitiny-desktop-bin"]
 	path = orbitiny-desktop-bin
 	url = ssh://aur@aur.archlinux.org/orbitiny-desktop-bin.git
+[submodule "reptyr-git"]
+	path = reptyr-git
+	url = ssh://aur@aur.archlinux.org/reptyr-git.git
