@@ -13,9 +13,6 @@
 [submodule "linux-ck-autobuild"]
   path = linux-ck-autobuild
   url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
-[submodule "scu-git"]
-  path = scu-git
-  url = ssh://aur@aur.archlinux.org/scu-git.git
 [submodule "wireguard-ui"]
   path = wireguard-ui
   url = ssh://aur@aur.archlinux.org/wireguard-ui.git
@@ -73,9 +70,6 @@
 [submodule "mmtui"]
   path = mmtui
   url = ssh://aur@aur.archlinux.org/mmtui.git
-[submodule "improve-imgsli-git"]
-	path = improve-imgsli-git
-	url = ssh://aur@aur.archlinux.org/improve-imgsli-git.git
 [submodule "improve-imgsli"]
 	path = improve-imgsli
 	url = ssh://aur@aur.archlinux.org/improve-imgsli.git

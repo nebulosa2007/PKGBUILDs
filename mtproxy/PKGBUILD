@@ -4,12 +4,11 @@
 # Maintainer: Nebulosa <nebulosa2007-at-yandex-dot-ru>
 
 pkgname=mtproxy
-_pkgname=MTProxy
 pkgver=1
 pkgrel=1
 pkgdesc="Proxy server for Telegram messaging app"
 arch=(i686 x86_64)
-url="https://github.com/TelegramMessenger/$_pkgname"
+url="https://github.com/TelegramMessenger/${pkgname//mtp/MTP}"
 license=('GPL-2.0-only AND LGPL-2.0-only')
 depends=(
   glibc
@@ -17,34 +16,34 @@ depends=(
   zlib
 )
 options=(!debug)
-backup=(etc/mtproxy.conf)
+backup=("etc/mtproxy.conf")
 source=(
-  001.patch::$url/commit/28f5b17eef2f50d768c4f010f8a4fc149254550a.patch # mtproto: by default do not open stats port
-  002.patch::$url/commit/2c942119c4ee340c80922ba11d14fb3b10d5e654.patch # enable stats only on 127.0.0.1
-  003.patch::$url/commit/e4c6b8bcd46dff2c7e7c7595ff02631d2f1fbd45.patch # Implement TLS transport for MTProto-proxy
-  004.patch::$url/commit/b2777943be9d5be386609234f6f175452e105cb5.patch # Automatically emulate TLS response from the specified domain
-  005.patch::$url/commit/d3479a5ba9315cecd086f4fd13a7714cb7f33a4b.patch # Allow to specify more than one TLS domain and check request SNI
-  006.patch::$url/commit/febe7c9e5d94af7b506ab87bfcb4137031c76044.patch # Improve logging
-  007.patch::$url/commit/7bd174643fa29bbc57d76fc1f5714c823c7f22f0.patch # Add dummy proxy_connection and immediately proxy all request to port 80 to upstream
-  008.patch::$url/commit/1b916c4027b09d7304f8e19e3ec2301c0d85398e.patch # Simplify and optimize encryption
-  009.patch::$url/commit/df658b028a7d8cc44318937c2fe73f3f03840bc6.patch # proxy conn
-  010.patch::$url/commit/6d1ac2dab406c39e4006467c46cc25c67a140db8.patch # allow proxy pass
-  011.patch::$url/commit/04282c7eaff01b2b1ee9f55b809f3b731a1e9d24.patch # Improve logging
-  012.patch::$url/commit/74095c52debbb2265b82e8c1115cf4f5d5ad24d8.patch # Fix warnings
-  013.patch::$url/commit/e35c207e75776e9eeca4c961630c73a047db3b41.patch # Choose cipher suite for ServerHello
-  014.patch::$url/commit/0865708960b412b5206b70c1f37b9c0a42d73cbf.patch # Return O3 optimization level
-  015.patch::$url/commit/b0fffa3b02df22163e43c6ca7169a0936db31dca.patch # Do not change window clamp dy default in TLS-mode
-  016.patch::$url/commit/e1acd1166444235631307de4cff0c65bc16a0015.patch # Do not maximize TCP buffers in TLS-mode
-  017.patch::$url/commit/e65047ce219cda44b342b52277be0e25c21d30cf.patch # Disable TCP keep-alive and lingering
-  018.patch::$url/commit/58db91509deb72c2d152f03a5ad057b590d06664.patch # Better private key generation
-  019.patch::$url/commit/ce9933813dd1473e8158b45abf38fa45cbd3b84c.patch # Allow to use workers with TLS-transport
-  020.patch::$url/commit/b93e44b8616346d9c278bcc214c7a7671e8883a6.patch # Enable default TCP keep-alive
-  021.patch::$url/commit/d0c1257ca5ac399732bb331e8c0b345e484e2fcd.patch # ext-server: timeout on inbound connections
-  022.patch::$url/commit/dc0c7f3de40530053189c572936ae4fd1567269b.patch # Check for existence of default domain before using it
-  $url/archive/v$pkgver/$pkgname-$pkgver.tar.gz
-  $pkgname.{conf,service}
-  $pkgname-config.{service,timer}
-  {pid_assertion,fcommon}.patch
+  "001.patch::$url/commit/28f5b17eef2f50d768c4f010f8a4fc149254550a.patch" # mtproto: by default do not open stats port
+  "002.patch::$url/commit/2c942119c4ee340c80922ba11d14fb3b10d5e654.patch" # enable stats only on 127.0.0.1
+  "003.patch::$url/commit/e4c6b8bcd46dff2c7e7c7595ff02631d2f1fbd45.patch" # Implement TLS transport for MTProto-proxy
+  "004.patch::$url/commit/b2777943be9d5be386609234f6f175452e105cb5.patch" # Automatically emulate TLS response from the specified domain
+  "005.patch::$url/commit/d3479a5ba9315cecd086f4fd13a7714cb7f33a4b.patch" # Allow to specify more than one TLS domain and check request SNI
+  "006.patch::$url/commit/febe7c9e5d94af7b506ab87bfcb4137031c76044.patch" # Improve logging
+  "007.patch::$url/commit/7bd174643fa29bbc57d76fc1f5714c823c7f22f0.patch" # Add dummy proxy_connection and immediately proxy all request to port 80 to upstream
+  "008.patch::$url/commit/1b916c4027b09d7304f8e19e3ec2301c0d85398e.patch" # Simplify and optimize encryption
+  "009.patch::$url/commit/df658b028a7d8cc44318937c2fe73f3f03840bc6.patch" # proxy conn
+  "010.patch::$url/commit/6d1ac2dab406c39e4006467c46cc25c67a140db8.patch" # allow proxy pass
+  "011.patch::$url/commit/04282c7eaff01b2b1ee9f55b809f3b731a1e9d24.patch" # Improve logging
+  "012.patch::$url/commit/74095c52debbb2265b82e8c1115cf4f5d5ad24d8.patch" # Fix warnings
+  "013.patch::$url/commit/e35c207e75776e9eeca4c961630c73a047db3b41.patch" # Choose cipher suite for ServerHello
+  "014.patch::$url/commit/0865708960b412b5206b70c1f37b9c0a42d73cbf.patch" # Return O3 optimization level
+  "015.patch::$url/commit/b0fffa3b02df22163e43c6ca7169a0936db31dca.patch" # Do not change window clamp dy default in TLS-mode
+  "016.patch::$url/commit/e1acd1166444235631307de4cff0c65bc16a0015.patch" # Do not maximize TCP buffers in TLS-mode
+  "017.patch::$url/commit/e65047ce219cda44b342b52277be0e25c21d30cf.patch" # Disable TCP keep-alive and lingering
+  "018.patch::$url/commit/58db91509deb72c2d152f03a5ad057b590d06664.patch" # Better private key generation
+  "019.patch::$url/commit/ce9933813dd1473e8158b45abf38fa45cbd3b84c.patch" # Allow to use workers with TLS-transport
+  "020.patch::$url/commit/b93e44b8616346d9c278bcc214c7a7671e8883a6.patch" # Enable default TCP keep-alive
+  "021.patch::$url/commit/d0c1257ca5ac399732bb331e8c0b345e484e2fcd.patch" # ext-server: timeout on inbound connections
+  "022.patch::$url/commit/dc0c7f3de40530053189c572936ae4fd1567269b.patch" # Check for existence of default domain before using it
+  "$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
+  "$pkgname.{conf,service}"
+  "$pkgname-config.{service,timer}"
+  "{pid_assertion,fcommon}.patch"
 )
 b2sums=(
   'b49d9293c2645044edbe0982b8340dd262744b3d59585e06bd30ee11260fa2d8b6debbbfb061510aec995b40f0a0a4d17cbaa83d9289e5b744d3d2e49510f00e'
@@ -79,7 +78,7 @@ b2sums=(
 )
 
 prepare() {
-  cd $_pkgname-$pkgver
+  cd ${pkgname//mtp/MTP}-$pkgver
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
@@ -91,7 +90,7 @@ prepare() {
 }
 
 build() {
-  cd $_pkgname-$pkgver
+  cd ${pkgname//mtp/MTP}-$pkgver
   export CFLAGS=-fcommon
   export CXXFLAGS=-fcommon
   export LDFLAGS=-fcommon
@@ -99,8 +98,8 @@ build() {
 }
 
 package() {
-  install -vDm644 $pkgname.conf              -t "$pkgdir"/etc/
-  install -vDm755 $_pkgname-$pkgver/objs/bin/${pkgname//xy/to}-proxy -t "$pkgdir"/usr/bin/
-  install -vDm644 $pkgname.service $pkgname-config.{service,timer}   -t "$pkgdir"/usr/lib/systemd/system/
-  install -vd                 "$pkgdir"/var/lib/mtproxy/
+  install -vDm 644 $pkgname.conf                                                -t "$pkgdir"/etc/
+  install -vDm 755 ${pkgname//mtp/MTP}-$pkgver/objs/bin/${pkgname//xy/to}-proxy -t "$pkgdir"/usr/bin/
+  install -vDm 644 $pkgname.service $pkgname-config.{service,timer}             -t "$pkgdir"/usr/lib/systemd/system/
+  install -vd                                                                      "$pkgdir"/var/lib/mtproxy/
 }
