@@ -79,3 +79,6 @@
 [submodule "reptyr-git"]
 	path = reptyr-git
 	url = ssh://aur@aur.archlinux.org/reptyr-git.git
+[submodule "maxx-desktop"]
+	path = maxx-desktop
+	url = ssh://aur@aur.archlinux.org/maxx-desktop.git
