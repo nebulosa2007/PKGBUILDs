@@ -7,9 +7,6 @@
 [submodule "gsconnect-git"]
   path = gsconnect-git
   url = ssh://aur@aur.archlinux.org/gsconnect-git.git
-[submodule "gvc-git"]
-  path = gvc-git
-  url = ssh://aur@aur.archlinux.org/gvc-git.git
 [submodule "linux-ck-autobuild"]
   path = linux-ck-autobuild
   url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
@@ -19,9 +16,6 @@
 [submodule "wireguard-ui-bin"]
   path = wireguard-ui-bin
   url = ssh://aur@aur.archlinux.org/wireguard-ui-bin.git
-[submodule "wl-gears-git"]
-  path = wl-gears-git
-  url = ssh://aur@aur.archlinux.org/wl-gears-git.git
 [submodule "scu-bin"]
   path = scu-bin
   url = ssh://aur@aur.archlinux.org/scu-bin.git
@@ -46,12 +40,6 @@
 [submodule "cassette-bin"]
   path = cassette-bin
   url = ssh://aur@aur.archlinux.org/cassette-bin.git
-[submodule "flatpak-ext"]
-  path = flatpak-ext
-  url = ssh://aur@aur.archlinux.org/flatpak-ext.git
-[submodule "flatpak-ext-git"]
-  path = flatpak-ext-git
-  url = ssh://aur@aur.archlinux.org/flatpak-ext-git.git
 [submodule "xwayland-run"]
   path = xwayland-run
   url = https://aur.archlinux.org/xwayland-run.git
