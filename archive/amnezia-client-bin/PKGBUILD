@@ -35,7 +35,7 @@ prepare() {
   tar xf AmneziaVPN_Linux_Installer.tar
 }
 
-package() { 
+package() {
   install -vDm755  AmneziaVPN_Linux_Installer.bin "$pkgdir"/opt/${pkgname%-bin}
   # For installing AmneziaVPN:
   # Xwayland &; env DISPLAY=:0 /opt/amnesia-client-installer

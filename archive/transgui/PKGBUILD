@@ -29,7 +29,6 @@ prepare() {
 
 _build_and_install () {
   cd $pkgbase-$pkgver
-  
   lazbuild $pkgbase.lpi \
     --lazarusdir="/usr/lib/lazarus" \
     --primary-config-path="../build-$1" \
