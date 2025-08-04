@@ -73,3 +73,6 @@
 [submodule "chawan"]
 	path = chawan
 	url = ssh://aur@aur.archlinux.org/chawan.git
+[submodule "t9plusledcontrol"]
+	path = t9plusledcontrol
+	url = ssh://aur@aur.archlinux.org/t9plusledcontrol.git
