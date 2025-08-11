@@ -8,7 +8,7 @@
 +UNAME := $(shell uname -m)
 +
 +COMMON_CFLAGS = -fcf-protection=full -O3 -std=gnu11 -Wall -fno-strict-aliasing -fno-strict-overflow -fwrapv -DAES=1 -D_GNU_SOURCE=1 -D_FILE_OFFSET_BITS=64
-+COMMON_LDFLAGS = -Wl,-z,relro -Wl,-z,now -Wall -ggdb -rdynamic -lm -lrt -lcrypto -lz -lpthread -lcrypto
++COMMON_LDFLAGS = -Wl,-z,relro -Wl,-z,now -Wall -ggdb -rdynamic -Wl,--as-needed -lm -lrt -lcrypto -lz -lpthread
  
 -ARCH =
 -ifeq ($m, 32)
