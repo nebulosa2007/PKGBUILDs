@@ -1,35 +1,33 @@
 # Maintainer: mattf <matheusfillipeag@gmail.com>
 
 pkgname=libcurl-impersonate-bin
-pkgver=1.0.0
+pkgver=1.2.0
 pkgrel=2
 pkgdesc="Series of patches that make curl requests look like Chrome"
 arch=(aarch64 armv7h i686 x86_64)
-url=https://github.com/lexiforest/curl-impersonate
-depends=(glibc)
+url="https://github.com/lexiforest/curl-impersonate"
 license=(MIT)
-provides=(${pkgname%-bin}-chrome)
-conflicts=(${pkgname%-bin}-chrome)
+depends=(glibc)
+provides=(${pkgname%-bin}-chrome ${pkgname%-bin})
+conflicts=(curl-impersonate)
 options=(!debug)
-source=(https://raw.githubusercontent.com/lexiforest/curl-impersonate/master/LICENSE)
+
+source=(${url/github/raw\.githubusercontent}/master/LICENSE)
 source_aarch64=($url/releases/download/v$pkgver/${pkgname%-bin}-v$pkgver.aarch64-linux-gnu.tar.gz)
 source_armv7h=($url/releases/download/v$pkgver/${pkgname%-bin}-v$pkgver.arm-linux-gnueabihf.tar.gz)
 source_i686=($url/releases/download/v$pkgver/${pkgname%-bin}-v$pkgver.i386-linux-gnu.tar.gz)
 source_x86_64=($url/releases/download/v$pkgver/${pkgname%-bin}-v$pkgver.x86_64-linux-gnu.tar.gz)
-sha512sums=('fcba99cba275aa35c971e9c45cdd41120b0c9a4e14c4f96ef0e2262ac21b016c749f46be5ffa7e17ce29bf75d039ad15eb5be989bbadb5bd2afb678e42165014')
-sha512sums_aarch64=('d4315173ec602f5df87d4ed38972465820755fbc6bd93d3b7ba24b4bf48dc49e3a4889298884d486d94cceaf1c3e7dd912051254c86661f218b83312b635c7fc')
-sha512sums_armv7h=('31d2efa4cacc3050a656f10bdcc78cd20063b633e83f42dab077e82444d30b5cfacb6ff44468c28244786d306b75c903d17ca2aaceb2328bb6b3a7332a5adf1a')
-sha512sums_i686=('2905d54b555f8d031728dbb78f0cf50b2db6b324442dec3473d65335bef723c31f3a48d0f981816297bd077748a0b94bd81f579fd2a29e5f4da0e3042cdadbaa')
-sha512sums_x86_64=('8b5f5ae49a5fc938ad04460ab31f6e2a4fb7fd644721dda8d25d7fcf9cccfbbb57fd2505bf3f726e1f0e2f9827a35e4ff06f0ddbe22f8e4af2d2e60290ebf69f')
-b2sums=('f9218feece0320ad19cde8d03c6f93292e3ff4261e2efe1dfbf32de03174344853bf6a4fecb4bbf1bd8e96bd4e0df0972b744b4187b869c7cc7448c26981fdde')
-b2sums_aarch64=('1069af58258c9e125325d814f211e7157429cbee433ae064d1943978f0ea1a7ad5de91c918f780c442d447dbe49ecc6bd752f736ca27b6a4b86344a3ff828aec')
-b2sums_armv7h=('3d262ad239d589e53d2138dc78da0ced7adcc5d84143ec90fa206d017c3303eb4eb3e112bb80885c7af0c5965109d0b7d50813e9fd3540e694bfbd6d36770626')
-b2sums_i686=('bddd9023b9fd5fc65f0a731d9fadf7efc8246fa0a652e63e495c0974b4b38ad47f8e28ff14016b07daa24287e8378c16afcf2445e835f9beacde4e36c8d97643')
-b2sums_x86_64=('058256666d98807dbed2a01324af45614523875b8facf7254cf77f92ed9c6b1739db581863aa26f46226168e9edd3a4b104db0d2fecfe97277d6cc4ee534f035')
+
+sha256sums=('7d0c5f4b5b4c27299ad6759798772b866b3559ac5edb23845f36328eb734376d')
+sha256sums_aarch64=('9409c19a8d7a1e88763b2c1281422d082fde21fae3b6615418995b61849fc753')
+sha256sums_armv7h=('dabfb1b572c6fe37f32332a019e1048a5addb91a1a75ccdc4107ebeb10fc0c48')
+sha256sums_i686=('6ac57d5ed305eee2887aa335216346e116c3fd3915a93a2a55b63efe9c6e385b')
+sha256sums_x86_64=('f1aec526f2c28c816c261c22b9ad29c0eab39164a3e8e2b3f2c96d3a1b67b8dd')
 
 package () {
   install -vDm 755 ${pkgname%-bin}.so.4.8.0 -t "$pkgdir"/usr/lib/
-  ln -s /usr/lib/${pkgname%-bin}.so.4.8.0      "$pkgdir"/usr/lib/${pkgname%-bin}-chrome.so
-  ln -s /usr/lib/${pkgname%-bin}.so.4.8.0      "$pkgdir"/usr/lib/${pkgname%-bin}-chrome.so.4
-  install -vDm 644 LICENSE                  -t "$pkgdir"/usr/share/licenses/$pkgname/
+  ln -s /usr/lib/${pkgname%-bin}.so.4.8.0 "$pkgdir"/usr/lib/${pkgname%-bin}-chrome.so
+  ln -s /usr/lib/${pkgname%-bin}.so.4.8.0 "$pkgdir"/usr/lib/${pkgname%-bin}-chrome.so.4
+  ln -s /usr/lib/${pkgname%-bin}.so.4.8.0 "$pkgdir"/usr/lib/${pkgname%-bin}.so
+  install -vDm 644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
