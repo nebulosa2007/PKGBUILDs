@@ -1,0 +1,63 @@
+diff -ruN MTProxy-0/mtproto/mtproto-proxy.c MTProxy-2/mtproto/mtproto-proxy.c
+--- MTProxy-0/mtproto/mtproto-proxy.c	2025-08-11 18:47:17.859716591 +0300
++++ MTProxy-2/mtproto/mtproto-proxy.c	2025-08-11 18:42:44.240394004 +0300
+@@ -2229,6 +2229,9 @@
+       }
+     }
+     break;
++  case 'R':
++    tcp_rpcs_set_ext_rand_pad_only(1);
++    break;
+   default:
+     return -1;
+   }
+@@ -2246,6 +2249,7 @@
+   // parse_option ("outbound-connections-ps", required_argument, 0, 'o', "limits creation rate of outbound connections to mtproto-servers (default %d)", DEFAULT_OUTBOUND_CONNECTION_CREATION_RATE);
+   parse_option ("slaves", required_argument, 0, 'M', "spawn several slave workers; not recommended for TLS-transport mode for better replay protection");
+   parse_option ("ping-interval", required_argument, 0, 'T', "sets ping interval in second for local TCP connections (default %.3lf)", PING_INTERVAL);
++  parse_option ("random-padding-only", no_argument, 0, 'R', "allow only clients with random padding option enabled");
+ }
+ 
+ void mtfront_parse_extra_args (int argc, char *argv[]) /* {{{ */ {
+diff -ruN MTProxy-0/net/net-tcp-rpc-ext-server.c MTProxy-2/net/net-tcp-rpc-ext-server.c
+--- MTProxy-0/net/net-tcp-rpc-ext-server.c	2025-08-11 18:47:17.866383321 +0300
++++ MTProxy-2/net/net-tcp-rpc-ext-server.c	2025-08-11 18:42:44.253727468 +0300
+@@ -149,12 +149,17 @@
+ 
+ static unsigned char ext_secret[16][16];
+ static int ext_secret_cnt = 0;
++static int ext_rand_pad_only = 0;
+ 
+ void tcp_rpcs_set_ext_secret (unsigned char secret[16]) {
+   assert (ext_secret_cnt < 16);
+   memcpy (ext_secret[ext_secret_cnt ++], secret, 16);
+ }
+ 
++void tcp_rpcs_set_ext_rand_pad_only(int set) {
++   ext_rand_pad_only = set;
++}
++
+ static int allow_only_tls;
+ 
+ struct domain_info {
+@@ -1309,7 +1314,7 @@
+         evp_crypt (T->read_aeskey, random_header, random_header, 64);
+         unsigned tag = *(unsigned *)(random_header + 56);
+ 
+-        if (tag == 0xdddddddd || tag == 0xeeeeeeee || tag == 0xefefefef) {
++        if (tag == 0xdddddddd || ((tag == 0xeeeeeeee || tag == 0xefefefef) && !ext_rand_pad_only)) {
+           if (tag != 0xdddddddd && allow_only_tls) {
+             vkprintf (1, "Expected random padding mode\n");
+             RETURN_TLS_ERROR(default_domain_info);
+diff -ruN MTProxy-0/net/net-tcp-rpc-ext-server.h MTProxy-2/net/net-tcp-rpc-ext-server.h
+--- MTProxy-0/net/net-tcp-rpc-ext-server.h	2025-08-11 18:47:17.866383321 +0300
++++ MTProxy-2/net/net-tcp-rpc-ext-server.h	2025-08-11 18:42:44.253727468 +0300
+@@ -31,6 +31,8 @@
+ 
+ void tcp_rpcs_set_ext_secret(unsigned char secret[16]);
+ 
++void tcp_rpcs_set_ext_rand_pad_only(int set);
++
+ void tcp_rpc_add_proxy_domain (const char *domain);
+ 
+ void tcp_rpc_init_proxy_domains();
