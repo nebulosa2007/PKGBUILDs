@@ -1,0 +1,33 @@
+--- MTProxy-1/Makefile  2018-07-19 10:12:29.000000000 +0300
++++ Makefile    2025-08-11 15:43:58.841539280 +0300
+@@ -2,18 +2,20 @@
+ DEP    =       dep
+ EXE = ${OBJ}/bin
+ 
+-COMMIT := $(shell git log -1 --pretty=format:"%H")
++ARCH := $(shell uname -m)
+ 
+-ARCH =
+-ifeq ($m, 32)
+-ARCH = -m32
+-endif
+-ifeq ($m, 64)
+-ARCH = -m64
++COMMON_CFLAGS := -fcommon -fcf-protection=full -O3 -std=gnu11 -Wall -fno-strict-aliasing -fno-strict-overflow -fwrapv -DAES=1 -D_GNU_SOURCE=1 -D_FILE_OFFSET_BITS=64
++COMMON_LDFLAGS := -fcommon -Wl,-z,relro -Wl,-z,now -Wall -ggdb -rdynamic -lm -lrt -lcrypto -lz -lpthread -lcrypto
++
++ifeq ($(ARCH), x86_64)
++CFLAGS := $(COMMON_CFLAGS) -mpclmul -march=core2 -mfpmath=sse -mssse3
++else ifeq ($(ARCH), aarch64)
++CFLAGS := $(COMMON_CFLAGS)
++else ifeq ($(ARCH), arm64)
++CFLAGS := $(COMMON_CFLAGS)
+ endif
+ 
+-CFLAGS = $(ARCH) -O3 -std=gnu11 -Wall -mpclmul -march=core2 -mfpmath=sse -mssse3 -fno-strict-aliasing -fno-strict-overflow -fwrapv -DAES=1 -DCOMMIT=\"${COMMIT}\" -D_GNU_SOURCE=1 -D_FILE_OFFSET_BITS=64
+-LDFLAGS = $(ARCH) -ggdb -rdynamic -lm -lrt -lcrypto -lz -lpthread -lcrypto
++LDFLAGS := $(COMMON_LDFLAGS)
+ 
+ LIB = ${OBJ}/lib
+ CINCLUDE = -iquote common -iquote .
+ 
