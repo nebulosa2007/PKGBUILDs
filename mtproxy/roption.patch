@@ -1,6 +1,5 @@
-diff -ruN MTProxy-0/mtproto/mtproto-proxy.c MTProxy-2/mtproto/mtproto-proxy.c
---- MTProxy-0/mtproto/mtproto-proxy.c	2025-08-11 18:47:17.859716591 +0300
-+++ MTProxy-2/mtproto/mtproto-proxy.c	2025-08-11 18:42:44.240394004 +0300
+--- a/mtproto/mtproto-proxy.c
++++ b/mtproto/mtproto-proxy.c
 @@ -2229,6 +2229,9 @@
        }
      }
@@ -19,9 +18,9 @@ diff -ruN MTProxy-0/mtproto/mtproto-proxy.c MTProxy-2/mtproto/mtproto-proxy.c
  }
  
  void mtfront_parse_extra_args (int argc, char *argv[]) /* {{{ */ {
-diff -ruN MTProxy-0/net/net-tcp-rpc-ext-server.c MTProxy-2/net/net-tcp-rpc-ext-server.c
---- MTProxy-0/net/net-tcp-rpc-ext-server.c	2025-08-11 18:47:17.866383321 +0300
-+++ MTProxy-2/net/net-tcp-rpc-ext-server.c	2025-08-11 18:42:44.253727468 +0300
+
+--- a/net/net-tcp-rpc-ext-server.c
++++ b/net/net-tcp-rpc-ext-server.c
 @@ -149,12 +149,17 @@
  
  static unsigned char ext_secret[16][16];
@@ -49,9 +48,8 @@ diff -ruN MTProxy-0/net/net-tcp-rpc-ext-server.c MTProxy-2/net/net-tcp-rpc-ext-s
            if (tag != 0xdddddddd && allow_only_tls) {
              vkprintf (1, "Expected random padding mode\n");
              RETURN_TLS_ERROR(default_domain_info);
-diff -ruN MTProxy-0/net/net-tcp-rpc-ext-server.h MTProxy-2/net/net-tcp-rpc-ext-server.h
---- MTProxy-0/net/net-tcp-rpc-ext-server.h	2025-08-11 18:47:17.866383321 +0300
-+++ MTProxy-2/net/net-tcp-rpc-ext-server.h	2025-08-11 18:42:44.253727468 +0300
+--- a/net/net-tcp-rpc-ext-server.h
++++ b/net/net-tcp-rpc-ext-server.h
 @@ -31,6 +31,8 @@
  
  void tcp_rpcs_set_ext_secret(unsigned char secret[16]);

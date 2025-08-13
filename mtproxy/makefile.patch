@@ -1,5 +1,5 @@
---- Makefile	2025-08-11 17:12:04.259775649 +0300
-+++ MTProxy-1/Makefile	2025-08-11 17:15:29.841649826 +0300
+--- a/Makefile
++++ b/Makefile
 @@ -2,18 +2,24 @@
  DEP	=	dep
  EXE = ${OBJ}/bin
