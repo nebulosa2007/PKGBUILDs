@@ -73,3 +73,6 @@
 [submodule "t9plusledcontrol-git"]
 	path = t9plusledcontrol-git
 	url = ssh://aur@aur.archlinux.org/t9plusledcontrol-git.git
+[submodule "3x-ui-bin"]
+	path = 3x-ui-bin
+	url = ssh://aur@aur.archlinux.org/3x-ui-bin.git
