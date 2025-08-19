@@ -76,3 +76,6 @@
 [submodule "3x-ui-bin"]
 	path = 3x-ui-bin
 	url = ssh://aur@aur.archlinux.org/3x-ui-bin.git
+[submodule "3x-ui"]
+	path = 3x-ui
+	url = ssh://aur@aur.archlinux.org/3x-ui.git
