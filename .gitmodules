@@ -82,3 +82,6 @@
 [submodule "s-ui"]
 	path = s-ui
 	url = ssh://aur@aur.archlinux.org/s-ui.git
+[submodule "3x-ui-xray-core"]
+	path = 3x-ui-xray-core
+	url = ssh://aur@aur.archlinux.org/3x-ui-xray-core.git
