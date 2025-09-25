@@ -1,0 +1,58 @@
+# Maintainer: Nebulosa  <nebulosa2007-at-yandex-dot-ru>
+
+pkgname=tx-ui
+pkgver=0.6.2
+pkgrel=1
+pkgdesc="Advanced Xray Panel Support Multi Protocols, successor of MHSanaei/3x-ui"
+arch=(aarch64 armv7h i686 x86_64)
+url="https://github.com/AghayeCoder/$pkgname"
+license=(GPL-3.0-only)
+depends=(
+  glibc
+  sh
+  x-ui-xray-core
+)
+makedepends=(go)
+provides=(3x-ui)
+conflicts=(3x-ui)
+optdepends=(
+  'acme.sh: Certificate Management'
+  'fail2ban: IP Limit Management'
+  'openssh: SSH Port Forwarding Management'
+  'speedtest-cli: Speedtest by Ookla'
+  'ufw: Firewall Management'
+)
+options=(!debug)
+source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('8c517704c5b956e0924e827500814d3a8f6c92e912847086b0ddf1b5756db0d5')
+b2sums=('8e35535901e5de9a1f995e9ce4925d2838a313b3220831ed3dbb1bd9fa549c02ff04ff9856244466bdd9c85e57deaa9cc48ecf2329f9f2712fe9d7c63b260d2c')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -i 's|/etc/systemd/system/|/usr/lib/systemd/system/|g'                    ${pkgname:1}.sh
+  sed -i -E 's|wget -O ([^ ]+) ?-?N? (https?://[^ ]+)|curl -L -o \1 \2|g'       ${pkgname:1}.sh
+  sed -i -E 's|wget -N (https?://[^ ]+/([^/ ]+))|curl -L -o \2 \1|g'            ${pkgname:1}.sh
+  sed -i 's|/usr/local/|/usr/lib/|g'                                            ${pkgname:1}.sh
+  sed -i 's|WorkingDirectory=/usr/local/x-ui/|WorkingDirectory=/usr/lib/x-ui/|' ${pkgname:1}.service
+  sed -i 's|ExecStart=/usr/local/x-ui/x-ui|ExecStart=/usr/lib/x-ui/x-ui|'       ${pkgname:1}.service
+}
+
+build() {
+  cd $pkgname-$pkgver
+  export GOCACHE="$srcdir"/go-build
+  export GOPATH="$srcdir"/go
+  export CGO_CPPFLAGS=$CPPFLAGS
+  export CGO_CFLAGS="$CFLAGS -D_LARGEFILE64_SOURCE"
+  export CGO_CXXFLAGS=$CXXFLAGS
+  export CGO_LDFLAGS=$LDFLAGS
+  export CGO_ENABLED=1
+  export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
+  go build -o build/$pkgname main.go
+}
+
+package() {
+  cd $pkgname-$pkgver
+  install -vDm 755 ${pkgname:1}.sh          "$pkgdir"/usr/bin/${pkgname:1}
+  install -vDm 755 build/$pkgname           "$pkgdir"/usr/lib/${pkgname:1}/${pkgname:1}
+  install -vDm 644 ${pkgname:1}.service  -t "$pkgdir"/usr/lib/systemd/system/
+}
