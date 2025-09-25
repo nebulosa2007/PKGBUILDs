@@ -85,3 +85,6 @@
 [submodule "3x-ui-xray-core"]
 	path = 3x-ui-xray-core
 	url = ssh://aur@aur.archlinux.org/3x-ui-xray-core.git
+[submodule "marzban"]
+	path = marzban
+	url = ssh://aur@aur.archlinux.org/marzban.git
