@@ -1,7 +1,7 @@
 # Maintainer: Nebulosa  <nebulosa2007-at-yandex-dot-ru>
 
 pkgname=tx-ui
-pkgver=0.6.2
+pkgver=0.6.4
 pkgrel=1
 pkgdesc="Advanced Xray Panel Support Multi Protocols, successor of MHSanaei/3x-ui"
 arch=(aarch64 armv7h i686 x86_64)
@@ -24,8 +24,8 @@ optdepends=(
 )
 options=(!debug)
 source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('8c517704c5b956e0924e827500814d3a8f6c92e912847086b0ddf1b5756db0d5')
-b2sums=('8e35535901e5de9a1f995e9ce4925d2838a313b3220831ed3dbb1bd9fa549c02ff04ff9856244466bdd9c85e57deaa9cc48ecf2329f9f2712fe9d7c63b260d2c')
+sha256sums=('7967007ea02ec04bdad5947203a5a90f9e53b451b054e4e19723632166179f28')
+b2sums=('d3cd2d56ccc797a17fe66b8901ddc037a4f3fda51618f8003b3d50ecf307063ac6e80412bcc234b11fd4f753861f8dc7c01114098bbdd19d3f69f88e61272937')
 
 prepare() {
   cd $pkgname-$pkgver
