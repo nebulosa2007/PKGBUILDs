@@ -67,9 +67,6 @@
 [submodule "maxx-desktop"]
 	path = maxx-desktop
 	url = ssh://aur@aur.archlinux.org/maxx-desktop.git
-[submodule "chawan"]
-	path = chawan
-	url = ssh://aur@aur.archlinux.org/chawan.git
 [submodule "t9plusledcontrol-git"]
 	path = t9plusledcontrol-git
 	url = ssh://aur@aur.archlinux.org/t9plusledcontrol-git.git
