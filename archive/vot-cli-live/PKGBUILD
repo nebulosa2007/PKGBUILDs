@@ -1,0 +1,30 @@
+# Maintainer: Nebulosa  <nebulosa2007-at-yandex-dot-ru>
+
+pkgname=vot-cli-live
+pkgver=1.6.2
+pkgrel=1    
+pkgdesc="VOT-CLI with Yandex live voices support"
+arch=(any)
+url="https://github.com/fantomcheg/$pkgname"
+license=(Unlicense)
+depends=(
+  nodejs
+  sh
+)
+makedepends=(
+  npm
+  git
+)
+
+provides=(${pkgname%-live})
+conflicts=(${pkgname%-live})
+options=(!debug)
+source=($pkgname::git+$url)
+b2sums=('SKIP')
+
+package() {
+  install -vd "$pkgdir"/usr/lib/node_modules/
+  cd "$pkgdir"/usr/lib/node_modules/
+  npm install -g --prefix "$pkgdir"/usr $pkgname@$_npmver
+  chown -R root:root "$pkgdir"/usr
+}

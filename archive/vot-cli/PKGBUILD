@@ -1,0 +1,41 @@
+# Maintainer: Igor Dyatlov <dyatlov.igor@protonmail.com>
+
+pkgname=vot-cli
+pkgver=1.4.3
+pkgrel=1
+pkgdesc="Voice-Over-Translation but it's a CLI"
+arch=(any)
+url="https://github.com/FOSWLY/$pkgname"
+license=(Unlicense)
+depends=(
+  bun
+  nodejs
+  sh
+)
+makedepends=(npm)
+options=(!debug)
+source=(
+  ${pkgname}-${pkgver}.tgz::$url/archive/${pkgver}.tar.gz
+  001.patch::$url/commit/00b6106c862fa15c4ae8eabd5c0e307c91a01206.patch
+)
+b2sums=('18579e3aaba087f57109232c6856b46bb28d3efc48cabff138a81c034f04cd168dec88213cd61761abd9fa6d3f364591398fe8f3f0b5492ef67c3f59ff0b2b37'
+        'b0bf9728df7ac2a59ecdf5848f8bb29ba0cb5f22e7301a2bf8793653a93de1fd7b2fb7d9682375334dd0c0b7626af226cc939a156ba9fdbbb3477c60c776de12')
+
+prepare() {
+  cd $pkgname-$pkgver
+  local src
+  for src in "${source[@]}"; do
+    src="${src%%::*}"
+    src="${src##*/}"
+    [[ $src = *.patch ]] || continue
+    echo "Applying patch $src..."
+    patch -Np1 < "../$src"
+  done
+}
+
+package() {
+  install -vd "$pkgdir"/usr/lib/node_modules/
+  cd "$pkgdir"/usr/lib/node_modules/
+  npm install -g --prefix "$pkgdir"/usr $pkgname@$_npmver
+  chown -R root:root "$pkgdir"/usr
+}
