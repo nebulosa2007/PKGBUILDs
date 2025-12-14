@@ -88,3 +88,6 @@
 [submodule "vot-cli-live"]
 	path = vot-cli-live
 	url = ssh://aur@aur.archlinux.org/vot-cli-live.git
+[submodule "go-mmproxy"]
+	path = go-mmproxy
+	url = ssh://aur@aur.archlinux.org/go-mmproxy.git
