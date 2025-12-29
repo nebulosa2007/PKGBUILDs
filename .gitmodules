@@ -1,33 +1,9 @@
-[submodule "gcad3d-bin"]
-  path = gcad3d-bin
-  url = ssh://aur@aur.archlinux.org/gcad3d-bin.git
 [submodule "gsconnect"]
   path = gsconnect
   url = ssh://aur@aur.archlinux.org/gsconnect.git
-[submodule "gsconnect-git"]
-  path = gsconnect-git
-  url = ssh://aur@aur.archlinux.org/gsconnect-git.git
-[submodule "linux-ck-autobuild"]
-  path = linux-ck-autobuild
-  url = ssh://aur@aur.archlinux.org/linux-ck-autobuild.git
-[submodule "wireguard-ui"]
-  path = wireguard-ui
-  url = ssh://aur@aur.archlinux.org/wireguard-ui.git
-[submodule "wireguard-ui-bin"]
-  path = wireguard-ui-bin
-  url = ssh://aur@aur.archlinux.org/wireguard-ui-bin.git
-[submodule "scu"]
-  path = scu
-  url = ssh://aur@aur.archlinux.org/scu.git
-[submodule "onagre"]
-  path = onagre
-  url = ssh://aur@aur.archlinux.org/onagre.git
 [submodule "wlr-which-key"]
   path = wlr-which-key
   url = ssh://aur@aur.archlinux.org/wlr-which-key.git
-[submodule "chawan-git"]
-  path = chawan-git
-  url = ssh://aur@aur.archlinux.org/chawan-git.git
 [submodule "rdrview"]
   path = rdrview
   url = ssh://aur@aur.archlinux.org/rdrview.git
@@ -49,27 +25,12 @@
 [submodule "byedpi"]
   path = byedpi
   url = ssh://aur@aur.archlinux.org/byedpi.git
-[submodule "easy-switcher"]
-  path = easy-switcher
-  url = ssh://aur@aur.archlinux.org/easy-switcher.git
-[submodule "mmtui"]
-  path = mmtui
-  url = ssh://aur@aur.archlinux.org/mmtui.git
 [submodule "improve-imgsli"]
 	path = improve-imgsli
 	url = ssh://aur@aur.archlinux.org/improve-imgsli.git
-[submodule "orbitiny-desktop-bin"]
-	path = orbitiny-desktop-bin
-	url = ssh://aur@aur.archlinux.org/orbitiny-desktop-bin.git
-[submodule "reptyr-git"]
-	path = reptyr-git
-	url = ssh://aur@aur.archlinux.org/reptyr-git.git
 [submodule "maxx-desktop"]
 	path = maxx-desktop
 	url = ssh://aur@aur.archlinux.org/maxx-desktop.git
-[submodule "t9plusledcontrol-git"]
-	path = t9plusledcontrol-git
-	url = ssh://aur@aur.archlinux.org/t9plusledcontrol-git.git
 [submodule "3x-ui-bin"]
 	path = 3x-ui-bin
 	url = ssh://aur@aur.archlinux.org/3x-ui-bin.git
@@ -91,3 +52,6 @@
 [submodule "go-mmproxy"]
 	path = go-mmproxy
 	url = ssh://aur@aur.archlinux.org/go-mmproxy.git
+[submodule "chawan-git"]
+	path = chawan-git
+	url = ssh://aur@aur.archlinux.org/chawan-git.git
