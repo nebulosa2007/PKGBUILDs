@@ -55,3 +55,6 @@
 [submodule "chawan-git"]
 	path = chawan-git
 	url = ssh://aur@aur.archlinux.org/chawan-git.git
+[submodule "python-curl-cffi"]
+	path = python-curl-cffi
+	url = ssh://aur@aur.archlinux.org/python-curl-cffi.git
