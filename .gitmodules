@@ -55,3 +55,9 @@
 [submodule "atch"]
 	path = atch
 	url = ssh://aur@aur.archlinux.org/atch.git
+[submodule "libtape-git"]
+	path = libtape-git
+	url = ssh://aur@aur.archlinux.org/libtape-git.git
+[submodule "libapi-base-git"]
+	path = libapi-base-git
+	url = ssh://aur@aur.archlinux.org/libapi-base-git.git
