@@ -61,3 +61,6 @@
 [submodule "libapi-base-git"]
 	path = libapi-base-git
 	url = ssh://aur@aur.archlinux.org/libapi-base-git.git
+[submodule "3x-ui-mtg-core"]
+	path = 3x-ui-mtg-core
+	url = ssh://aur@aur.archlinux.org/3x-ui-mtg-core.git
