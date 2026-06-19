@@ -64,3 +64,6 @@
 [submodule "3x-ui-mtg-core"]
 	path = 3x-ui-mtg-core
 	url = ssh://aur@aur.archlinux.org/3x-ui-mtg-core.git
+[submodule "libcase-git"]
+	path = libcase-git
+	url = ssh://aur@aur.archlinux.org/libcase-git.git
