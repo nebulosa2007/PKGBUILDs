@@ -76,3 +76,6 @@
 [submodule "warpscout-bin"]
 	path = warpscout-bin
 	url = ssh://aur@aur.archlinux.org/warpscout-bin.git
+[submodule "gvc-git"]
+	path = gvc-git
+	url = ssh://aur@aur.archlinux.org/gvc-git.git
