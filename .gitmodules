@@ -70,3 +70,9 @@
 [submodule "3x-ui-mtg-multi-core"]
 	path = 3x-ui-mtg-multi-core
 	url = ssh://aur@aur.archlinux.org/3x-ui-mtg-multi-core.git
+[submodule "warpscout"]
+	path = warpscout
+	url = ssh://aur@aur.archlinux.org/warpscout.git
+[submodule "warpscout-bin"]
+	path = warpscout-bin
+	url = ssh://aur@aur.archlinux.org/warpscout-bin.git
